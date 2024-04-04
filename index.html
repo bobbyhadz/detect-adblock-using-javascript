@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 100px;
+      }
+    </style>
+
+    <!-- 👇️ load the ads-prebid-wp-banners.js file here 👇️ -->
+    <script src="./ads-prebid-wp-banners.js"></script>
+  </head>
+
+  <body>
+    <h2>bobbyhadz.com | Home</h2>
+
+    <h2 id="adblock-message"></h2>
+
+    <script>
+      // 👇️ if this runs, the user has an Ad Blocker active
+      if (window.runningAdsAllowed === undefined) {
+        console.log('Detected Ad content Blocker');
+
+        const h2 = document.getElementById('adblock-message');
+
+        h2.innerHTML = 'Disable your ad block to support us';
+      }
+    </script>
+  </body>
+</html>
